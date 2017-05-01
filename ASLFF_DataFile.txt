@@ -1,0 +1,91 @@
+/////////////////////////////////////////////////////////////////////
+// Altium Designer 16 Schematic Library File Format (Altium_SLFF)
+//
+// Date: May 1, 2017
+// Author: @braincodec
+//
+// WARNING! The information exposed here is only with educational purposes, use at your own risk.
+//
+/////////////////////////////////////////////////////////////////////
+
+This file contain some of the format specification of the binary data records found into the "data" file
+of a Schematic Library component.
+
+
+Size(bytes)		ExampleValue			      Description
+------------------------------------------------------------------------------
+2               2A 00 => 42 			      Size of the data section
+
+10              00 01 02 00 00 00 00 01 00 00 n/a ...
+
+1				00                            Symbols Inside Edge:
+													00: No Symbol
+													03: Clock
+
+1               00                            Symbols Outside Ede:
+													00: No Symbol
+													01: Dot
+													04: Active Low Input
+													11: Active Low Output
+
+1               00                            Symbols Inside:
+						                        	00: No Symbol
+						                        	08: Postponed Input
+						                        	09: Open Collector
+						                        	0A: Hiz
+						                        	0B: High Current
+						                        	0C: Pulse
+						                        	0D: Schmitt
+						                        	16: Open Collector Pull Up
+						                        	17: Open Emitter
+						                        	18: Open Emitter Pull Up
+						                        	1E: Shift Left
+						                        	20: Open Output
+
+1				00                            SymbolsOutside:
+													00: No Symbol
+													02: Right Left Signal Flow
+													05: Analog Signal Input
+													06: Not Logic Connection
+													19: Digital Signal In
+													21: Left Right Signal Flow
+													22: Bidirectional Signal Flow
+
+1               07                            Description Length:
+                                              The length in bytes of the description field (the next one)
+
+n               45 78 61 6D 70 6C 65 43       Description:
+											  The description of the pin. The length is variable.
+
+1               01                            n/a ...
+
+1               04                            Electrical Type:
+												     0:Input
+												     1:I/O4
+												     2:Output
+												     3:Open Collector
+												     4:Passive
+												     5:HiZ
+												     6:Open Emitter
+												     7:Power
+													 
+1               3A                            Mixed field (OR) :
+																  Hide = 0x04						
+													DisplayNameVisible = 0x08						
+													 DesignatorVisible = 0x10
+														  Orientation0 = 0x20
+														 Orientation90 = 0x21
+														Orientation180 = 0x22
+														Orientation270 = 0x23 
+																Locked = 0x40
+			
+2               1E 00                         Length of the pin line
+2               EC FF                         Location X
+2               1E 00                         Location Y
+4               3C 78 F0 00                   RGB Color
+1               02                            Display Name Length
+2               33 33                         Display Name
+1               02                            Designator Length
+2               34 34                         Designator
+			   
+3               00                            Null char (end of record)
