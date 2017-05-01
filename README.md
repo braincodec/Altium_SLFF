@@ -19,4 +19,12 @@ One of the more important files of the library is on 'Data' file. This file has 
 
 ![Altiumm Schematic Library File Format ScreenShoot](https://github.com/braincodec/Altium_SLFF/raw/master/AltiumSLFF_001.png)
 
+As you can see this file has records like RECORD=41, RECORD=34, RECORD=41 and the first one RECORD=1 which are plain text in ASCII
 
+Each of these records has different format and has many parameters or fields and you can see also a lot of rare characters which are a little special. This "special characters are in binary format and are used to store things like the 'symbols', 'electrical type' of the pins, graphical parameters like location X, color or lenght, etc.
+
+This binary data was the more difficult part to obtain and you can find more detailed information in the ASLFF_DataFile.txt file, here in the repository.
+
+I am using all the information exposed here for my own use and for a tool I am developing.
+
+Thanks for read and enjoy!
