@@ -17,6 +17,6 @@ This file is in reallity a zipped file. If we have a single component and we dec
    
 One of the more important files of the library is on 'Data' file. This file has 'records' in both ASCII format and binary values, you can see that in this picture:
 
-![Altiumm Schematic Library File Format ScreenShoot](https://github.com/braincodec/Altium_SLFF/edit/master/AltiumSLFF_001.png)
+![Altiumm Schematic Library File Format ScreenShoot](https://github.com/braincodec/Altium_SLFF/raw/master/AltiumSLFF_001.png)
 
 
